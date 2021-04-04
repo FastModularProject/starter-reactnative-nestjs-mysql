@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "96d30836-b37a-4d6a-9ee8-3cb9c099a35c",
+		"name": "StarterWeb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "sign-up",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5a38e18a-b189-4958-999e-a9d330e18906",
+								"exec": [
+									"pm.test(\"Successful POST request : signup\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"Check values of user created\", function () {",
+									"    let attemptedResult = JSON.parse(postman.getEnvironmentVariable(\"userToCreate\"));",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(jsonData.pseudo).to.eql(attemptedResult.pseudo);",
+									"    pm.expect(jsonData.role).to.eql(\"user\");",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{{userToCreate}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}:{{apiPort}}/auth/signup",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"port": "{{apiPort}}",
+							"path": [
+								"auth",
+								"signup"
+							]
+						},
+						"description": "Sign up a new user in the web application"
+					},
+					"response": []
+				},
+				{
+					"name": "email-free",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}:{{apiPort}}/auth/email-free/myEmail@fmp.com",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"port": "{{apiPort}}",
+							"path": [
+								"auth",
+								"email-free",
+								"myEmail@fmp.com"
+							]
+						},
+						"description": "Check whether a given mail is free to use"
+					},
+					"response": []
+				},
+				{
+					"name": "sign-in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "myEmail@fmp.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "myPassword",
+									"type": "text"
+								},
+								{
+									"key": "pseudo",
+									"value": "myPseudo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{apiUrl}}:{{apiPort}}/auth/signin",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"port": "{{apiPort}}",
+							"path": [
+								"auth",
+								"signin"
+							]
+						},
+						"description": "Login an already existing userer"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "9367bb53-fcfa-4cad-913e-87624a5ea645",
+						"type": "text/javascript",
+						"exec": [
+							"let userToCreate = {",
+							"\t\"email\": Math.random().toString(36).substring(10) + \"@fmp.com\",",
+							"\t\"password\":\"myPassword\",",
+							"\t\"pseudo\":\"myPseudo\"",
+							"}",
+							"",
+							"postman.setEnvironmentVariable(\"userToCreate\", JSON.stringify(userToCreate));"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "4df075f7-6025-426b-bd82-6676ea1ac2ea",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "me",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{apiUrl}}:{{apiPort}}/users/me",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"port": "{{apiPort}}",
+							"path": [
+								"users",
+								"me"
+							]
+						},
+						"description": "todo"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "dd7aa94f-2dea-4ecb-a7c0-66ddb135abea",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "cf90d7fc-1b25-4723-b847-64ea18c52357",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

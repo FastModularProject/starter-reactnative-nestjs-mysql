@@ -1,0 +1,35 @@
+name: Deploy staging
+on:
+  push:
+    branches:
+    - staging
+    
+jobs:
+  backend:
+    name: Upload backend to Amazon ElasticBeanStack (EBS)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:  
+    - name: Checkout source code
+      uses: actions/checkout@v2
+    - name: Dependencies installation
+      run: npm install
+    - name: Generate build
+      run: npm run build
+    - name: Generate deployment package
+      run: zip -r ../deploy.zip . -x '*.git*'  
+    - name: Deploy to ElasticBeanStack
+      uses: einaregilsson/beanstalk-deploy@v13  
+      env:
+        VERSION_LABEL: yourEbsName-source-${{ github.run_id }}
+        ENV: PROD
+      with:
+        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        application_name: yourEbsName
+        environment_name: yourEbsName-env
+        version_label: ${{ env.VERSION_LABEL }}
+        region: us-east-2
+        deployment_package: deploy.zip

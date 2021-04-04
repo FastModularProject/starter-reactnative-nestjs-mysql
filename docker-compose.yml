@@ -1,0 +1,39 @@
+version: "3.7"
+
+services:
+  db:
+    build: 
+      context: ./database
+    cap_add:
+      - SYS_NICE
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+      - db_data:/var/lib/database
+    ports:
+      - ${MYSQL_PORT}:${MYSQL_PORT}
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_TCP_PORT: ${MYSQL_PORT}
+    env_file: ./.env
+
+  back:
+    depends_on:
+      - db
+    build: 
+      context: ./backend
+      target: development
+    volumes: 
+      - ./backend:/app
+      - /app/node_modules
+      - /app/dist
+    restart: "no"
+    ports:
+      - ${BACKEND_PORT}:${BACKEND_PORT}
+    env_file: ./.env
+    
+volumes:
+  db_data: {}
