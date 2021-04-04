@@ -1,7 +1,7 @@
 ### How to ... ? ###
 
-**How to access my frontend ?** <br/>
-`http://localhost:8080`
+**How to access my app ?** <br/>
+https://reactnative.dev/docs/running-on-device
 
 **How to access my backend ?** <br/>
 A postman collection and a Postman environment are available in `./backend/postman/`. <br/>
