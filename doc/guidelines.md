@@ -5,57 +5,58 @@ Guidelines are recommended but not mandatory.
 Recommended folder and file structure :
 <pre>
 .
+.
 ├── assets
-│   ├── fonts
-│   ├── icons
-│   └── imgs
+│   ├── fonts
+│   ├── icons
+│   └── imgs
 └── src
-    ├── app.js
-    ├── environments.js
+    ├── app.tsx
+    ├── environments.ts
     ├── components
-    │   ├── forms
-    │   │   ├── button.component.tsx
-    │   │   ├── checkbox.form.tsx
-    │   │   ├── forms.utils.tsx
-    │   │   ├── input.form.tsx
-    │   │   ├── text.input.tsx
-    │   │   └── textarea.form.tsx
-    │   ├── navbar
-    │   │   ├── components
-    │   │   │   └── button.component.js
-    │   │   └── navbar.component.js
-    │   └── style
-    │       └── text.component.tsx
+    │   ├── forms
+    │   │   ├── button.component.tsx
+    │   │   ├── checkbox.form.tsx
+    │   │   ├── forms.utils.tsx
+    │   │   ├── input.form.tsx
+    │   │   ├── text.input.tsx
+    │   │   └── textarea.form.tsx
+    │   ├── navbar
+    │   │   ├── components
+    │   │   │   └── button.component.js
+    │   │   └── navbar.component.js
+    │   └── style
+    │       └── text.component.tsx
     ├── models
-    │   └── user.model.tsx
-    ├── pages
-    │   ├── auth
-    │   │   ├── auth.styled.tsx
-    │   │   ├── signin.screen.tsx
-    │   │   └── signup.screen.tsx
-    │   ├── pages.navigation.js
-    │   └── tabs
-    │       ├── account
-    │       │   ├── components
-    │       │   │   ├── card-user.tsx
-    │       │   │   └── hotel-card.component.tsx
-    │       │   └── home.screen.tsx
-    │       ├── signin
-    │       ├── home
-    │       └── signout
+    │   └── user.model.tsx
+    ├── screens
+    │   ├── pages.navigator.js
+    │   ├── auth
+    │   │   ├── auth.styled.tsx
+    │   │   ├── signin.screen.tsx
+    │   │   └── signup.screen.tsx
+    │   └── tabs
+    │       ├── signin
+    │       ├── account
+    │       ├── signout
+    │       └── home
+    │       │   ├── components
+    │       │   │   ├── card-user.tsx
+    │       │   │   └── hotel-card.component.tsx
+    │       │   └── home.screen.tsx
     ├── services
-    │   ├── auth.service.tsx
-    │   ├── services.util.tsx
-    │   └── user.service.tsx
+    │   ├── auth.service.tsx
+    │   ├── services.util.tsx
+    │   └── user.service.tsx
     ├── store
-    │   ├── configure.store.tsx
-    │   └── reducers
-    │       ├── auth.slice.tsx
-    │       └── user.slice.tsx
+    │   ├── configure.store.tsx
+    │   └── reducers
+    │       ├── auth.slice.tsx
+    │       └── user.slice.tsx
     ├── themes
-    │   ├── color.theme.ts
-    │   ├── font.theme.ts
-    │   └── responsive.theme.ts
+    │   ├── color.theme.ts
+    │   ├── font.theme.ts
+    │   └── responsive.theme.ts
     └── utils
         ├── animations
         ├── date.util.tsx
