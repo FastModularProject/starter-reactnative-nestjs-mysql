@@ -5,7 +5,7 @@ ogtitle: Mobile starter React.js NestJS
 ogdescription: Modern full-stack starter that allows you to create your mobile application.
 ---
 
-A modern full-stack web starter that allows you to create your mobile application faster with the best developper experience. <br />
+A modern full-stack mobile starter that allows you to create your mobile application faster with the best developper experience. <br />
 
 It has been developed by our best developpers, as the result of dozens of experiments on real projects. 
 This starter bundles best practices together. If you know the stack, you won’t need to learn anything else.
