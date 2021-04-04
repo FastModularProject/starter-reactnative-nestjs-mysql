@@ -21,7 +21,7 @@ https://reactnative.dev/docs/environment-setup
 **Step 6 : Plug your device** <br/>
 https://reactnative.dev/docs/running-on-device
 
-**Step 8 : Launch the app** <br/>
+**Step 7 : Launch the app** <br/>
 ```npx react-native run-android```
 
 **Install packages** <br/>
