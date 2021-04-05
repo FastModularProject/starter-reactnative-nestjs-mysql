@@ -74,7 +74,7 @@ See full documentation <strong>[here](https://fast-modular-project.com/starters/
 
 If you are not familiar with the stack yet, here is some very usefull links:
 
-- **React.js**: [React Native in 10 minutes](https://blog.fast-modular-project.com) (coming soon) / [Official documentation.](https://reactnative.dev/) 
+- **React Native**: [React Native in 10 minutes](https://blog.fast-modular-project.com) (coming soon) / [Official documentation.](https://reactnative.dev/) 
 - **Nest (NestJS)**: [NestJS in 10 minutes](https://blog.fast-modular-project.com/nestjs-in-10-minutes) / [Official documentation.](https://nestjs.com/) 
 - **TypeORM**: [TypeORM with NestJS in 10 minutes](https://blog.fast-modular-project.com/typeorm-with-nestjs-in-10-minutes) / [Official documentation.](https://nestjs.com/) 
 - **Docker**: [Docker in 10 minutes](https://blog.fast-modular-project.com/docker-in-10-minutes) / [Official documentation.](https://www.docker.com/) 
