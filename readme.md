@@ -59,7 +59,7 @@
 
 A modern full-stack mobile starter that allows you to create your web application faster with the best developper experience. 
 
-See full documentation <strong>[here](https://fast-modular-project.com/starters/starter-react-nestjs-mysql)</strong>.
+See full documentation <strong>[here](https://fast-modular-project.com/starters/starter-reactnative-nestjs-mysql)</strong>.
 
 
 - Frontend and Backend architecture
