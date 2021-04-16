@@ -20,9 +20,9 @@ Documentation [here](https://blog.fast-modular-project.com/deployment-aws-elasti
 
 Documentation [here](https://blog.fast-modular-project.com/deployment-aws-rds).
 
-**Step 3 : create the S3 bucket and se CloudFront CDN to serve it** <br/>
+**Step 3 : Store** <br/>
 
-Documentation [here](https://blog.fast-modular-project.com/deployment-aws-s3-cloudfront).
+Publish your app to the Play Store or the App Store as usual.
 
 ### Automatic creation of the infrastructure with [Terraform](https://www.terraform.io) and deployments ###
 Coming soon...

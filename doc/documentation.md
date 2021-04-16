@@ -1,5 +1,3 @@
-### How to ... ? ###
-
 **How to access my app ?** <br/>
 https://reactnative.dev/docs/running-on-device
 
