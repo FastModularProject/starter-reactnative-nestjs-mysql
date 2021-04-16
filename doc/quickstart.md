@@ -22,11 +22,12 @@ https://reactnative.dev/docs/environment-setup
 https://reactnative.dev/docs/running-on-device
 
 **Step 7 : Launch the app** <br/>
-```npx react-native run-android```
+```cd app``` and then <br/>
+```npx react-native run-android``` or ```npx react-native run-ios```
 
 **Install packages** <br/>
 If you want to install a package with npm, you can npm install it locally. <br>
-A watcher in the container is waiting for changes in your package.json and package-lock.json to replicate the installation you have done locally. <br/>
+A watcher in the container is waiting for changes in your ```package.json``` and ```package-lock.json``` to replicate the installation you have done locally. <br/>
 <br/>
 If you are facing any issue, you can delete anoynmous container and force a rebuilt of your containers using : <br/>
 `docker-compose up -V --build`
